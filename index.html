@@ -167,6 +167,134 @@ alert("Wrong answer Manisha 😂❤️");
 
 }
 
+// ===== PART 2 =====
+
+// Continue Button
+document.addEventListener("click",function(e){
+
+if(e.target.id=="next"){
+
+card.innerHTML=`
+
+<h1>One Small Question ❤️</h1>
+
+<p id="line">
+
+🌹
+
+तिमी हाँस्दा...
+
+मेरो संसार नै उज्यालो हुन्छ।🥹
+
+</p>
+
+<button id="yes2">
+
+YES 💕
+
+</button>
+
+<button id="no2">
+
+NO 😜
+
+</button>
+
+`;
+
+}
+
+});
+
+// Funny Messages
+
+const jokes=[
+
+"Wrong Button 😂",
+
+"Think Again 😏",
+
+"Momo Khuwauxu 🍜",
+
+"Pleaseeeee 🥹",
+
+"Your Smile Already Said YES ❤️"
+
+];
+
+let i=0;
+
+
+// NO Button Run
+
+document.addEventListener("mouseover",function(e){
+
+if(e.target.id=="no2"){
+
+const x=Math.random()*220-110;
+
+const y=Math.random()*220-110;
+
+e.target.style.transform=`translate(${x}px,${y}px)`;
+
+}
+
+});
+
+
+// NO Click
+
+document.addEventListener("click",function(e){
+
+if(e.target.id=="no2"){
+
+alert(jokes[i]);
+
+i++;
+
+if(i>=jokes.length){
+
+i=0;
+
+}
+
+}
+
+});
+
+
+// YES Click
+
+document.addEventListener("click",function(e){
+
+if(e.target.id=="yes2"){
+
+card.innerHTML=`
+
+<h1>🥹 Awww Manisha ❤️</h1>
+
+<p>
+
+I knew you wouldn't break my heart.
+
+But...
+
+I still have one last surprise for you. 💕
+
+</p>
+
+<button id="last">
+
+Continue 🌹
+
+</button>
+
+`;
+
+}
+
+});
+  
 </script>
 
 </body>
