@@ -1,495 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>For Manisha ❤️</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ff5f9e,#ffc0d9);
-overflow:hidden;
-}
-
-.card{
-
-width:90%;
-max-width:370px;
-
-padding:30px;
-
-background:white;
-
-border-radius:25px;
-
-text-align:center;
-
-box-shadow:0 15px 35px rgba(0,0,0,.2);
-
-}
-
-h1{
-
-color:#ff2d75;
-
-margin-bottom:15px;
-
-}
-
-p{
-
-font-size:18px;
-
-line-height:1.6;
-
-margin-bottom:25px;
-
-}
-
-button{
-
-padding:14px 28px;
-
-border:none;
-
-border-radius:50px;
-
-font-size:18px;
-
-cursor:pointer;
-
-margin:8px;
-
-transition:.3s;
-
-}
-
-#yes{
-
-background:#ff2d75;
-
-color:white;
-
-}
-
-#no{
-
-background:#ddd;
-
-}
-
-button:hover{
-
-transform:scale(1.08);
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Forever Story ❤️</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts for beautiful typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- AOS Library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #fff5f5, #ffe3e3, #ffd1d1);
+        }
+        .romantic-title {
+            font-family: 'Dancing Script', cursive;
+        }
+        /* Custom floating hearts animation */
+        .heart-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .floating-heart {
+            position: absolute;
+            bottom: -10%;
+            color: rgba(239, 68, 68, 0.15);
+            animation: float up 12s infinite linear;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
 </head>
-
-<body>
-
-<div class="card" id="card">
-
-<h1>Hey Manisha ❤️</h1>
-
-<p>
-
-Before I say anything...
-
-I want you to answer one tiny question. 🥺
-
-</p>
-
-<button id="yes">
-
-I'm Ready 💖
-
-</button>
-
-<button id="no">
-
-Not Ready 😅
-
-</button>
-
-</div>
-
-<script>
-
-const card=document.getElementById("card");
-
-const yes=document.getElementById("yes");
-
-const no=document.getElementById("no");
-
-yes.onclick=function(){
-
-card.innerHTML=`
-
-<h1>Yay ❤️</h1>
-
-<p>
-
-Thank you for trusting me.
-
-Let's continue...🥹
-
-</p>
-
-<button id="next">
-
-Continue ➜
-
-</button>
-
-`;
-
-}
-
-no.onclick=function(){
-
-alert("Wrong answer Manisha 😂❤️");
-
-}
-
-// ===== PART 2 =====
-
-// Continue Button
-document.addEventListener("click",function(e){
-
-if(e.target.id=="next"){
-
-card.innerHTML=`
-
-<h1>One Small Question ❤️</h1>
-
-<p id="line">
-
-🌹
-
-तिमी हाँस्दा...
-
-मेरो संसार नै उज्यालो हुन्छ।🥹
-
-</p>
-
-<button id="yes2">
-
-YES 💕
-
-</button>
-
-<button id="no2">
-
-NO 😜
-
-</button>
-
-`;
-
-}
-
-});
-
-// Funny Messages
-
-const jokes=[
-
-"Wrong Button 😂",
-
-"Think Again 😏",
-
-"Momo Khuwauxu 🍜",
-
-"Pleaseeeee 🥹",
-
-"Your Smile Already Said YES ❤️"
-
-];
-
-let i=0;
-
-// NO Button Run
-
-document.addEventListener("mouseover",function(e){
-
-if(e.target.id=="no2"){
-
-const x=Math.random()*220-110;
-
-const y=Math.random()*220-110;
-
-e.target.style.transform=`translate(${x}px,${y}px)`;
-
-}
-
-});
-
-// NO Click
-
-document.addEventListener("click",function(e){
-
-if(e.target.id=="no2"){
-
-alert(jokes[i]);
-
-i++;
-
-if(i>=jokes.length){
-
-i=0;
-
-}
-
-}
-
-});
-
-// YES Click
-
-document.addEventListener("click",function(e){
-
-if(e.target.id=="yes2"){
-
-card.innerHTML=`
-
-<h1>🥹 Awww Manisha ❤️</h1>
-
-<p>
-
-I knew you wouldn't break my heart.
-
-But...
-
-I still have one last surprise for you. 💕
-
-</p>
-
-<button id="last">
-
-Continue 🌹
-
-</button>
-
-`;
-
-}
-
-});
-
-// ===== PART 3 =====
-
-// Final Continue Button
-document.addEventListener("click", function(e){
-
-if(e.target.id=="last"){
-
-card.innerHTML=`
-
-<h1>💖 Dear Manisha 💖</h1>
-
-<p style="font-size:18px;line-height:1.8">
-
-Since the day I met you...
-
-❤️ Every moment became special.
-
-🌹
-
-"तिम्रो मुस्कानले मेरो दिन उज्यालो बनाउँछ।
-
-तिमी बिना केही अधुरो-अधुरो लाग्छ।"
-
-🥹❤️
-
-Will You Be My Girlfriend?
-
-</p>
-
-<button id="accept">
-
-YES ❤️
-
-</button>
-
-<button id="reject">
-
-NO 🙈
-
-</button>
-
-`;
-
-}
-
-});
-
-// Final NO Button Run Away
-
-document.addEventListener("mouseover",function(e){
-
-if(e.target.id=="reject"){
-
-let x=Math.random()*250-120;
-
-let y=Math.random()*250-120;
-
-e.target.style.transform=`translate(${x}px,${y}px)`;
-
-}
-
-});
-
-// Final YES
-
-document.addEventListener("click",function(e){
-
-if(e.target.id=="accept"){
-
-card.innerHTML=`
-
-<h1 style="color:#ff2d75;font-size:38px">
-❤️ My Beautiful Manisha ❤️
-</h1>
-
-<p style="font-size:18px;line-height:1.9;text-align:left">
-
-My Love, ❤️<br><br>
-
-I don't know how to explain what you truly mean to me because words will never be enough.
-
-From the moment you came into my life, everything started feeling more beautiful. Your smile makes my bad days disappear, your voice brings peace to my heart, and your love gives me a reason to smile every single day.
-
-Thank you for loving me, understanding me, supporting me, and staying beside me through everything. Every memory we make together becomes one of my favorite memories.
-
-I promise to respect you, protect your heart, stand by your side, make you laugh when you're sad, hold your hand through every challenge, and love you a little more every single day.
-
-No matter where life takes us, I want us to keep choosing each other again and again.
-
-You are not just my girlfriend...
-You are my happiness, my peace, my safe place, my biggest blessing, and the most beautiful chapter of my life. ❤️
-
-I may not be perfect, but my love for you is real, honest, and comes from the deepest part of my heart.
-
-Thank you for being YOU.
-Thank you for making my life so special.
-
-I promise to keep loving you today, tomorrow, and every day that comes after.
-
-Forever and Always...
-
-❤️ I LOVE YOU SO MUCH MANISHA ❤️
-
-</p>
-
-`;
-
-// Floating Hearts
-
-function createHearts(){
-
-setInterval(()=>{
-
-const heart=document.createElement("div");
-
-heart.innerHTML=["❤️","💖","💕","🌸","✨"][Math.floor(Math.random()*5)];
-
-heart.style.position="fixed";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.top="-20px";
-
-heart.style.fontSize=(20+Math.random()*20)+"px";
-
-heart.style.transition="5s linear";
-
-heart.style.zIndex="9999";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-
-heart.style.top="110vh";
-
-},100);
-
-setTimeout(()=>{
-
-heart.remove();
-
-},5200);
-
-},250);
-
-}
-
-// Small Confetti
-
-function confetti(){
-
-for(let i=0;i<80;i++){
-
-let c=document.createElement("div");
-
-c.innerHTML="🎉";
-
-c.style.position="fixed";
-
-c.style.left=Math.random()*100+"vw";
-
-c.style.top="-30px";
-
-c.style.fontSize="25px";
-
-c.style.transition="4s linear";
-
-document.body.appendChild(c);
-
-setTimeout(()=>{
-
-c.style.top="110vh";
-
-},50);
-
-setTimeout(()=>{
-
-c.remove();
-
-},4200);
-
-}
-
-}
-
-// Confetti after YES
-
-document.addEventListener("click",function(e){
-
-if(e.target.id=="accept"){
-
-confetti();
-
-}
-
-});
-  
-</script>
-
+<body class="text-gray-800 antialiased relative overflow-x-hidden">
+
+    <!-- Background Music (Optional: Just change the src to a romantic song link if needed) -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Hearts Container -->
+    <div class="heart-bg" id="heart-container"></div>
+
+    <!-- Main Content Wrapper -->
+    <div class="relative z-10 max-w-2xl mx-auto px-6 py-12 text-center space-y-24">
+        
+        <!-- HEADER -->
+        <header class="min-h-screen flex flex-col justify-center items-center space-y-4" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold text-red-500 romantic-title tracking-wide animate-pulse">
+                ❤️ OUR FOREVER STORY ❤️
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 italic">
+                A Love Letter From Bishal To His Babe, Manisha
+            </p>
+            <div class="pt-12 text-gray-400 text-sm animate-bounce">
+                Scroll down slowly... 👇
+            </div>
+        </header>
+
+        <!-- CHAPTER 1 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">🌹</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 1: "THE BEGINNING"</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="space-y-4 text-gray-700 leading-relaxed font-light">
+                <p class="font-semibold text-red-500">Hey Babe... ❤️</p>
+                <p>If you're reading this right now, I just want you to know one thing...</p>
+                <p>This isn't just another message.</p>
+                <p>This isn't just another website.</p>
+                <p class="font-medium text-red-400">This is a little piece of my heart.</p>
+                <p>Every word you're about to read...</p>
+                <p>Every smile this page tries to bring to your face...</p>
+                <p>Every little surprise hidden inside...</p>
+                <p class="font-semibold">Was made only for you.</p>
+                <p>So promise me one thing...</p>
+                <p class="text-red-500 font-medium">Don't rush.</p>
+                <p>Read everything slowly...</p>
+                <p>Because every sentence carries a feeling I always wanted to tell you.</p>
+            </div>
+        </section>
+
+        <!-- CHAPTER 2 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">❤️</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 2: "26 MAY 2026"</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="space-y-4 text-gray-700 leading-relaxed font-light">
+                <p class="font-semibold text-lg text-red-500">Do you remember this date?</p>
+                <p class="italic text-xl font-medium">I do.</p>
+                <p>Because that was the day my life quietly changed forever.</p>
+                <p>I didn't know that one person could completely change the way I smiled...</p>
+                <p>The way I waited for messages...</p>
+                <p>The way I looked at my future...</p>
+                <p class="text-red-400 font-medium">But then...</p>
+                <p class="text-xl font-semibold text-red-500 romantic-title">You came into my life.</p>
+                <p>And suddenly...</p>
+                <p>Everything felt different.</p>
+                <p class="font-medium text-red-500 text-lg">Everything felt beautiful.</p>
+            </div>
+        </section>
+
+        <!-- CHAPTER 3 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">🥹</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 3: "THANK YOU"</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="space-y-3 text-gray-700 font-light">
+                <p class="text-lg font-medium text-red-500">Thank you...</p>
+                <p class="pb-2">For coming into my life.</p>
+                <p class="text-lg font-medium text-red-500">Thank you...</p>
+                <p class="pb-2">For choosing me.</p>
+                <p class="text-lg font-medium text-red-500">Thank you...</p>
+                <p class="pb-2">For believing in me.</p>
+                <p class="text-lg font-medium text-red-500">Thank you...</p>
+                <p class="pb-2">For staying with me.</p>
+                <p>Even from far away...</p>
+                <p class="font-semibold text-red-500">You somehow managed to become the closest person to my heart.</p>
+            </div>
+        </section>
+
+        <!-- CHAPTER 4 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">😏</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 4: "A SMALL CONFESSION"</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="space-y-4 text-gray-700 font-light">
+                <p class="font-medium text-lg">Can I tell you a secret?</p>
+                <p>I still don't know how you stole my heart...</p>
+                <p>And honestly...</p>
+                <p class="italic text-red-400">I'm not asking for it back anymore.</p>
+                <p>Because I think...</p>
+                <p class="text-xl font-semibold text-red-500 romantic-title">It looks much better with you. ❤️</p>
+            </div>
+        </section>
+
+        <!-- CHAPTER 5 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">😂</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 5: "YOU HAVE A PROBLEM"</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="space-y-4 text-gray-700 font-light">
+                <p class="font-semibold text-red-500 text-lg">Babe...</p>
+                <p class="text-xl font-bold text-red-400">You're illegally cute.</p>
+                <p>I'm seriously thinking about reporting you.</p>
+                <p>The only problem is...</p>
+                <p>If they take you away...</p>
+                <p class="font-medium text-red-500">Who am I going to annoy every day? 🤭❤️</p>
+            </div>
+        </section>
+
+        <!-- CHAPTER 6 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">💕</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 6: "WHAT I LOVE ABOUT YOU"</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="grid grid-cols-1 gap-2 text-gray-700 font-light">
+                <p>I love your smile.</p>
+                <p>I love your eyes.</p>
+                <p>I love your kindness.</p>
+                <p>I love your little attitude.</p>
+                <p>I love your laugh.</p>
+                <p>I love your caring heart.</p>
+                <p>I love your beautiful soul.</p>
+                <div class="pt-4 space-y-3">
+                    <p class="font-semibold text-lg text-red-500">But do you know my favorite?</p>
+                    <p class="text-2xl font-bold text-red-400 romantic-title">Your voice.</p>
+                    <p>Every time I hear you...</p>
+                    <p>Everything instantly feels better.</p>
+                    <p class="italic font-medium text-red-500">If happiness had a sound... It would sound exactly like your voice.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 7 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">🥺</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 7: "LONG DISTANCE"</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="space-y-4 text-gray-700 font-light">
+                <p>Sometimes... I wish I could simply hold your hand.</p>
+                <p>Sometimes... I wish I could hug you whenever I miss you.</p>
+                <p>Sometimes... I wish the distance between us never existed.</p>
+                <p class="font-semibold text-red-400 pt-2">But then I realize something...</p>
+                <p class="text-lg">Distance only separates two places.</p>
+                <p class="text-xl font-bold text-red-500">It could never separate two hearts.</p>
+                <p>Because my heart has already chosen its home...</p>
+                <p class="font-semibold text-red-500 text-xl romantic-title">And that home is you.</p>
+            </div>
+        </section>
+
+        <!-- CHAPTER 8 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">❤️</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 8: "YOU"</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="flex flex-wrap justify-center gap-3 pt-2 text-sm font-medium">
+                <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full shadow-xs">My peace</span>
+                <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full shadow-xs">My happiness</span>
+                <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full shadow-xs">My comfort</span>
+                <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full shadow-xs">My safe place</span>
+                <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full shadow-xs">My best friend</span>
+                <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full shadow-xs">My biggest blessing</span>
+                <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full shadow-xs">My favorite notification</span>
+                <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full shadow-xs">My favorite smile</span>
+                <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full shadow-xs">My favorite person</span>
+            </div>
+        </section>
+
+        <!-- CHAPTER 9 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">😚</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 9: "JUST IMAGINE..."</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="space-y-3 text-gray-700 font-light">
+                <p class="text-lg font-semibold text-red-400">Imagine...</p>
+                <p>One day...</p>
+                <p>No more distance. No more waiting.</p>
+                <p class="pb-2">No more saying "I miss you."</p>
+                <p>Instead...</p>
+                <p>I'll simply walk over... Hold your hand...</p>
+                <p>Look into your eyes... Smile...</p>
+                <p class="text-xl font-bold text-red-500">And say...</p>
+                <p class="text-2xl font-bold text-red-500 romantic-title">"I'm home."</p>
+                <p class="italic pt-2">Because wherever you are... Feels like home to me.</p>
+            </div>
+        </section>
+
+        <!-- CHAPTER 10 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">💍</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 10: "MY PROMISE"</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="space-y-3 text-gray-700 font-light text-left max-w-xs mx-auto">
+                <p>❤️ I'll always respect you.</p>
+                <p>❤️ I'll always support you.</p>
+                <p>❤️ I'll always protect your heart.</p>
+                <p>❤️ I'll always stay loyal.</p>
+                <p>❤️ I'll always choose you.</p>
+                <div class="text-center pt-4 space-y-1">
+                    <p class="italic text-gray-400">Again... Again... And again.</p>
+                    <p class="font-semibold text-red-500">Every single day.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 11 -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-red-100 space-y-4" data-aos="fade-up">
+            <div class="text-3xl">❤️</div>
+            <h2 class="text-xl font-bold tracking-wider text-red-400">CHAPTER 11: "FOREVER"</h2>
+            <hr class="border-red-100 w-1/4 mx-auto">
+            <div class="space-y-4 text-gray-700 font-light">
+                <p class="font-medium">If someone asked me...</p>
+                <p class="italic">"What is the best thing that ever happened in your life?"</p>
+                <p>I wouldn't need time to think.</p>
+                <p>I'd simply smile... Look at you... And answer...</p>
+                <p class="text-3xl font-bold text-red-500 romantic-title animate-bounce">"Her."</p>
+            </div>
+        </section>
+
+        <!-- FINAL CHAPTER -->
+        <section class="bg-linear-to-b from-red-50 to-red-100 rounded-3xl p-8 shadow-2xl border-2 border-red-200 space-y-6" data-aos="zoom-in">
+            <div class="text-4xl">🥹</div>
+            <h2 class="text-2xl font-bold tracking-wider text-red-500 romantic-title">FINAL CHAPTER</h2>
+            <hr class="border-red-300 w-1/3 mx-auto">
+            <div class="space-y-4 text-gray-700 leading-relaxed font-light">
+                <p>Babe... Thank you... For existing.</p>
+                <p>Thank you... For loving me.</p>
+                <p>Thank you... For making my life brighter.</p>
+                <p class="pt-2">No matter what happens tomorrow...</p>
+                <p>No matter how difficult life becomes...</p>
+                <p>No matter how many years pass...</p>
+                <p class="font-semibold text-red-600 text-lg">I'll never stop choosing you.</p>
+                <p class="italic text-sm text-gray-500">Because loving you... Has become the easiest thing my heart has ever done.</p>
+                
+                <div class="py-4 text-red-500 font-medium space-y-1">
+                    <p>I loved you yesterday.</p>
+                    <p>I love you today.</p>
+                    <p>I'll love you tomorrow.</p>
+                    <p class="text-xl font-semibold">And I'll continue loving you... For every tomorrow after that.</p>
+                </div>
+
+                <p>I don't need a perfect life. I don't need a perfect world.</p>
+                <p class="font-bold text-red-500 text-lg">As long as I have you... I already have everything.</p>
+                
+                <div class="pt-8 space-y-4">
+                    <p class="text-xl md:text-2xl font-bold text-red-600 romantic-title">
+                        ❤️ I LOVE YOU SO MUCH, MY BEAUTIFUL BABE. ❤️
+                    </p>
+                    <div class="text-gray-500 text-sm italic">Forever Yours,</div>
+                    <div class="text-2xl font-bold text-red-600 romantic-title tracking-wider">❤️ Bishal ❤️</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- AOS Animation Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Scroll Animations
+        AOS.init({
+            duration: 1200,
+            once: true
+        });
+
+        // Generate Floating Hearts Background
+        const heartContainer = document.getElementById('heart-container');
+        const heartEmojis = ['❤️', '💖', '💝', '💕', '🌹'];
+        
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+            heart.style.animationDuration = Math.random() * 5 + 7 + 's';
+            
+            heartContainer.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 12000);
+        }
+        
+        setInterval(createHeart, 400);
+
+        // Optional: Play music on first user click/scroll to bypass browser restrictions
+        window.addEventListener('click', () => {
+            const audio = document.getElementById('bg-music');
+            if(audio.paused) {
+                audio.volume = 0.3; // low gentle volume
+                audio.play().catch(e => console.log("Audio play blocked"));
+            }
+        }, { once: true });
+    </script>
 </body>
 </html>
