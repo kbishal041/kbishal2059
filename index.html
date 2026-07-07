@@ -294,6 +294,206 @@ Continue 🌹
 }
 
 });
+
+// ===== PART 3 =====
+
+// Final Continue Button
+document.addEventListener("click", function(e){
+
+if(e.target.id=="last"){
+
+card.innerHTML=`
+
+<h1>💖 Dear Manisha 💖</h1>
+
+<p style="font-size:18px;line-height:1.8">
+
+Since the day I met you...
+
+❤️ Every moment became special.
+
+🌹
+
+"तिम्रो मुस्कानले मेरो दिन उज्यालो बनाउँछ।
+
+तिमी बिना केही अधुरो-अधुरो लाग्छ।"
+
+🥹❤️
+
+Will You Be My Girlfriend?
+
+</p>
+
+<button id="accept">
+
+YES ❤️
+
+</button>
+
+<button id="reject">
+
+NO 🙈
+
+</button>
+
+`;
+
+}
+
+});
+
+
+// Final NO Button Run Away
+
+document.addEventListener("mouseover",function(e){
+
+if(e.target.id=="reject"){
+
+let x=Math.random()*250-120;
+
+let y=Math.random()*250-120;
+
+e.target.style.transform=`translate(${x}px,${y}px)`;
+
+}
+
+});
+
+
+// Final YES
+
+document.addEventListener("click",function(e){
+
+if(e.target.id=="accept"){
+
+card.innerHTML=`
+
+<h1 style="color:#ff2d75;font-size:38px">
+
+YAYYYYY ❤️🥳
+
+</h1>
+
+<p style="font-size:20px;line-height:1.8">
+
+Officially...
+
+You just made me the happiest person today. 🥹❤️
+
+<br><br>
+
+😂 No Return
+
+😂 No Refund
+
+❤️ Lifetime Happiness
+
+<br><br>
+
+I Love You So Much Manisha ❤️
+
+</p>
+
+`;
+
+createHearts();
+
+}
+
+});
+
+
+// Floating Hearts
+
+function createHearts(){
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.innerHTML=["❤️","💖","💕","🌸","✨"][Math.floor(Math.random()*5)];
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top="-20px";
+
+heart.style.fontSize=(20+Math.random()*20)+"px";
+
+heart.style.transition="5s linear";
+
+heart.style.zIndex="9999";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.style.top="110vh";
+
+},100);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},5200);
+
+},250);
+
+}
+
+
+// Small Confetti
+
+function confetti(){
+
+for(let i=0;i<80;i++){
+
+let c=document.createElement("div");
+
+c.innerHTML="🎉";
+
+c.style.position="fixed";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.top="-30px";
+
+c.style.fontSize="25px";
+
+c.style.transition="4s linear";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{
+
+c.style.top="110vh";
+
+},50);
+
+setTimeout(()=>{
+
+c.remove();
+
+},4200);
+
+}
+
+}
+
+
+// Confetti after YES
+
+document.addEventListener("click",function(e){
+
+if(e.target.id=="accept"){
+
+confetti();
+
+}
+
+});
   
 </script>
 
