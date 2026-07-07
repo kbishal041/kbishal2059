@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For Manisha ❤️</title>
 
 <style>
@@ -19,34 +20,30 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+background:linear-gradient(135deg,#ff5f9e,#ffc0d9);
 overflow:hidden;
-background:linear-gradient(135deg,#ff4b91,#ff9acb);
 }
 
 .card{
 
 width:90%;
-max-width:360px;
+max-width:370px;
 
 padding:30px;
 
-border-radius:20px;
+background:white;
 
-background:rgba(255,255,255,.15);
-
-backdrop-filter:blur(12px);
-
-box-shadow:0 10px 30px rgba(0,0,0,.25);
+border-radius:25px;
 
 text-align:center;
 
-color:white;
+box-shadow:0 15px 35px rgba(0,0,0,.2);
 
 }
 
 h1{
 
-font-size:32px;
+color:#ff2d75;
 
 margin-bottom:15px;
 
@@ -82,53 +79,21 @@ transition:.3s;
 
 #yes{
 
-background:white;
+background:#ff2d75;
 
-color:#ff2d75;
-
-font-weight:bold;
-
-}
-
-#yes:hover{
-
-transform:scale(1.08);
+color:white;
 
 }
 
 #no{
 
-background:#ff2d75;
-
-color:white;
-
-position:relative;
+background:#ddd;
 
 }
 
-.fade{
+button:hover{
 
-animation:fade .8s;
-
-}
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
+transform:scale(1.08);
 
 }
 
@@ -138,21 +103,21 @@ transform:translateY(0);
 
 <body>
 
-<div class="card fade" id="card">
+<div class="card" id="card">
 
 <h1>Hey Manisha ❤️</h1>
 
 <p>
 
-I have something special to ask you... 🥺
+Before I say anything...
 
-Please answer honestly.
+I want you to answer one tiny question. 🥺
 
 </p>
 
 <button id="yes">
 
-I'm Ready ❤️
+I'm Ready 💖
 
 </button>
 
@@ -166,29 +131,29 @@ Not Ready 😅
 
 <script>
 
+const card=document.getElementById("card");
+
 const yes=document.getElementById("yes");
 
 const no=document.getElementById("no");
 
-yes.onclick=()=>{
+yes.onclick=function(){
 
-document.getElementById("card").innerHTML=`
+card.innerHTML=`
 
-<h1>One Small Question 🌹</h1>
+<h1>Yay ❤️</h1>
 
 <p>
 
-Before I ask...
+Thank you for trusting me.
 
-I just want to say...
-
-Your smile is my favorite notification. ❤️🥹
+Let's continue...🥹
 
 </p>
 
 <button id="next">
 
-Continue 💕
+Continue ➜
 
 </button>
 
@@ -196,7 +161,7 @@ Continue 💕
 
 }
 
-no.onclick=()=>{
+no.onclick=function(){
 
 alert("Wrong answer Manisha 😂❤️");
 
@@ -206,3 +171,4 @@ alert("Wrong answer Manisha 😂❤️");
 
 </body>
 </html>
+
